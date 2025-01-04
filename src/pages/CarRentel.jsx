@@ -20,7 +20,7 @@ const CarRentalUI = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        setStates(data.map((state) => state.stateName));
+        setStates(data); 
       } catch (error) {
         console.error("Error fetching states:", error);
       }
@@ -29,22 +29,29 @@ const CarRentalUI = () => {
     fetchStates();
   }, []);
 
-  useEffect(() => {
-    const fetchLocations = async () => {
-      try {
-        const response = await fetch("http://localhost:8080/locations");
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        setLocations(data);
-      } catch (error) {
-        console.error("Error fetching locations:", error);
+  const fetchLocationsByState = async (stateId) => {
+    try {
+      const response = await fetch(`http://localhost:8080/locations/by-state/${stateId}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-    };
+      const data = await response.json();
+      setLocations(data); 
+    } catch (error) {
+      console.error("Error fetching locations:", error);
+    }
+  };
 
-    fetchLocations();
-  }, []);
+  const handleStateChange = (e) => {
+    const stateId = e.target.value;
+    setSelectedState(stateId);
+    setSelectedLocation(""); 
+    if (stateId) {
+      fetchLocationsByState(stateId);
+    } else {
+      setLocations([]); 
+    }
+  };
 
   const getCurrentDate = () => {
     const today = new Date();
@@ -73,12 +80,12 @@ const CarRentalUI = () => {
           <select
             className="form-select"
             value={selectedState}
-            onChange={(e) => setSelectedState(e.target.value)}
+            onChange={handleStateChange}
           >
             <option value="">Select State</option>
-            {states.map((state, index) => (
-              <option key={index} value={state}>
-                {state}
+            {states.map((state) => (
+              <option key={state.id} value={state.id}>
+                {state.stateName}
               </option>
             ))}
           </select>
@@ -86,15 +93,14 @@ const CarRentalUI = () => {
 
         <div className="col-md-4">
           <select
-            className="form-control"
+            className="form-select"
             value={selectedLocation}
             onChange={(e) => setSelectedLocation(e.target.value)}
+            disabled={!selectedState}
           >
-            <option value="" disabled>
-              Select Location
-            </option>
-            {locations.map((location, index) => (
-              <option key={index} value={location.locationName}>
+            <option value="">Select Location</option>
+            {locations.map((location) => (
+              <option key={location.id} value={location.id}>
                 {location.locationName}
               </option>
             ))}

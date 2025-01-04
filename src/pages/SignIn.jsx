@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-const SignIn = () => {
+const SignIn = ({setIsLogged}) => {
     const navigate = useNavigate();
 
     const validationSchema = Yup.object({
@@ -32,6 +32,7 @@ const SignIn = () => {
                 navigate('/dashboard');
                 localStorage.setItem("authToken", response.data.token);
                 localStorage.setItem("refreshToken",response.data.refreshToken)
+                
             }
         } catch (error) {
             console.error("Error logging in:", error);
