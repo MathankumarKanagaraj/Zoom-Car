@@ -1,7 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-// import jwtDecode from "jwt-decode";
 
 const PrivateRoute = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
@@ -15,7 +14,7 @@ const PrivateRoute = ({ children }) => {
         const currentTime = Math.floor(Date.now() / 1000);
         return decoded.exp > currentTime;
       } catch (error) {
-        return false;
+        return false ;
       }
     }
     return false;

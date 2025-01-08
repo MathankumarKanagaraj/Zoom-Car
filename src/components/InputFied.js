@@ -9,7 +9,7 @@ const InputField = ({
   className,
 }) => {
   return (
-    <div className={className}>
+    <div className={className}> 
       <label>{label}:</label>
       <input
         type={type}

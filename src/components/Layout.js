@@ -11,7 +11,7 @@ const Layout = () => {
           <div className="content">
             <CarRentalUI />
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   );

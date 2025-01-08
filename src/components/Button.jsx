@@ -6,7 +6,7 @@ const CarButton = ({
   onClick,
   style,
   className,
-  type = "button",
+  type = "button", 
   disabled = false,
   variant,
 }) => {

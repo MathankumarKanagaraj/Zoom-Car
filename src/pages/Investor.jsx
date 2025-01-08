@@ -13,7 +13,7 @@ const Investor = () => {
   return (
     <Container fluid className="p-0">
     <div>
-      <div className="row">
+      <div className=" row">
         <div className="col-6 text-section mt-5" style={{padding:"100px"}}>
           <h6 style={{fontSize:"80px"}}>Zoomcar, <h1 style={{fontSize:"80px"}}> India's Largest <h1 style={{fontSize:"80px"}}> Car Sharing Marketplace</h1></h1></h6>
           <p className="fs-5 text-secondary">  
