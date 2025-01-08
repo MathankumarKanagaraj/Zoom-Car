@@ -7,4 +7,4 @@ const BecomeHost = () => {
   )
 }
 
-export default BecomeHost
+export default BecomeHost 

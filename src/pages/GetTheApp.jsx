@@ -37,7 +37,7 @@ const GetTheApp =()=>{
                   alt="QR Code"
                   rounded
                   style={{ width: "150px", height: "150px" }}
-                />
+                /> 
               </Col>
             </Row>
           </Container>

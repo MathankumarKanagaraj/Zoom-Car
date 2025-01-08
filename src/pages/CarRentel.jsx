@@ -15,7 +15,7 @@ const CarRentalUI = () => {
   useEffect(() => {
     const fetchStates = async () => {
       try {
-        const response = await fetch("http://localhost:8080/states/get-state");
+        const response = await fetch("http://localhost:8080/api/v1/states/get-state");
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -31,7 +31,7 @@ const CarRentalUI = () => {
 
   const fetchLocationsByState = async (stateId) => {
     try {
-      const response = await fetch(`http://localhost:8080/locations/by-state/${stateId}`);
+      const response = await fetch(`http://localhost:8080/api/v1/locations/by-state/${stateId}`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -40,7 +40,7 @@ const CarRentalUI = () => {
     } catch (error) {
       console.error("Error fetching locations:", error);
     }
-  };
+  }; 
 
   const handleStateChange = (e) => {
     const stateId = e.target.value;

@@ -59,7 +59,7 @@ const NavBar = () => {
                   </a>
                 </li>
                 <li className="mb-3">
-                  <a href="/driveList"className="text-decoration-none text-black">
+                  <a href="/driverlist"className="text-decoration-none text-black">
                     <Icon icon="mdi:steering" className="fs-3 me-3" />
                     <span>Driver List</span>
                   </a>
@@ -96,7 +96,7 @@ const NavBar = () => {
             style={{ height: "50px" }}
           />
           <CarButton
-            label={
+            label={ 
               <>
                 <Icon
                   icon="gg:profile"

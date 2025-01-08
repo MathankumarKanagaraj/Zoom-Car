@@ -14,7 +14,7 @@ const PrivateRoute = ({ children }) => {
         const currentTime = Math.floor(Date.now() / 1000);
         return decoded.exp > currentTime;
       } catch (error) {
-        return false;
+        return false ;
       }
     }
     return false;

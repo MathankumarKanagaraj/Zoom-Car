@@ -18,7 +18,7 @@ const CarList = () => {
   const fetchCars = async (keywords = "") => {
     try {
       const token = localStorage.getItem("authToken");
-      const response = await axios.get("http://localhost:8080/api/car/search-car", {
+      const response = await axios.get("http://localhost:8080/api/v1/search-car", {
         params: { keywords },
         headers: {
           Authorization: `Bearer ${token}`,
@@ -140,7 +140,7 @@ const CarList = () => {
                 onChange={(e) => handlePriceChange(e, "max","min")}
                 step="10x0"
                 
-              />
+              /> 
             </div>
             <div style={{display:"flex", justifyContent:"space-between"}}>
               <p>Min</p>

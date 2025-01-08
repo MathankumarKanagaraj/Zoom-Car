@@ -11,7 +11,7 @@ const Sidebar = ({ filters, onFilterChange }) => {
           type="range"
           id="distance"
           min="0"
-          max="50"
+          max="50" 
           value={filters.distance}
           onChange={(e) => onFilterChange({ ...filters, distance: e.target.value })}
         />

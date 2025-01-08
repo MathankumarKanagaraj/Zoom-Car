@@ -129,7 +129,7 @@ const SignupPage = () => {
         </Formik>
         <div className="d-flex justify-content-center">
           <a className="text-black" href="/">
-            <span className="small-text">Already have an account?</span>
+            <span className="small-text"> Already have an account?</span>
             <span className="blue-text"> Login </span>
           </a>
         </div>

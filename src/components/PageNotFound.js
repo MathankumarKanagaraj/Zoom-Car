@@ -9,7 +9,7 @@ export const PageNotFound = () => {
                 <div className="col-12 my-5">
                     
                     <h1 style={{fontSize:"85px"}}>Oops!</h1>
-                </div>
+                </div> 
             </div>
 
             <div >
