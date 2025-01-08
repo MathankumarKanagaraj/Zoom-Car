@@ -12,7 +12,7 @@ const DriverList = () => {
         setDrivers(response.data);
       } catch (error) {
         console.error("Error fetching drivers:", error);
-      }
+       }
     }; 
     fetchDrivers();
   }, []);
